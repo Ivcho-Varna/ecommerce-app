@@ -49,7 +49,7 @@ function CheckoutContent() {
         title: "The Art of Programming",
         author: "Jane Developer",
         price: 29.99,
-        coverImage: "/the-art-of-programming.png",
+        coverImage: "/ecommerce-app/the-art-of-programming.png",
         description: "A comprehensive guide to mastering modern programming paradigms with practical examples and exercises.",
       },
       {
@@ -57,7 +57,7 @@ function CheckoutContent() {
         title: "Data Structures Simplified",
         author: "John Algorithm",
         price: 24.99,
-        coverImage: "/data-structures.png",
+        coverImage: "/ecommerce-app/data-structures.png",
         description: "Learn essential data structures and algorithms through clear explanations and real-world applications.",
       },
       {
@@ -65,7 +65,7 @@ function CheckoutContent() {
         title: "Web Development Mastery",
         author: "Sarah Frontend",
         price: 34.99,
-        coverImage: "/web-development.png",
+        coverImage: "/ecommerce-app/web-development.png",
         description: "A complete guide to modern web development, covering HTML, CSS, JavaScript, and popular frameworks.",
       }
     ];
