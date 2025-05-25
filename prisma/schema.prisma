@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Book {
+  id          Int      @id @default(autoincrement())
+  title       String
+  author      String
+  price       Float
+  image_path  String
+  description String?
+  stock       Int      @default(0)
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  authorId    Int?
+
+  // Relations
+  bookAuthor Author?     @relation(fields: [authorId], references: [id])
+  orderItems OrderItem[]
+}
+
+model Author {
+  id   Int    @id @default(autoincrement())
+  name String
+  role String
+  bio  String
+
+  // Relations
+  books Book[]
+}
+
+model Testimonial {
+  id          Int      @id @default(autoincrement())
+  name        String
+  role        String
+  testimonial String
+  createdAt   DateTime @default(now())
+  active      Boolean  @default(true)
+}
+
+model FAQ {
+  id       Int     @id @default(autoincrement())
+  question String
+  answer   String
+  order    Int     @default(0)
+  active   Boolean @default(true)
+}
+
+// Supporting models for orders
+model Order {
+  id           Int      @id @default(autoincrement())
+  customerName String
+  email        String
+  address      String
+  status       String   @default("pending") // pending, processing, shipped, delivered, cancelled
+  totalAmount  Float
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relations
+  orderItems OrderItem[]
+}
+
+model OrderItem {
+  id        Int   @id @default(autoincrement())
+  quantity  Int
+  unitPrice Float
+
+  // Relations
+  order   Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId Int
+
+  book   Book @relation(fields: [bookId], references: [id])
+  bookId Int
+}
