@@ -6,6 +6,9 @@ const nextConfig = {
     images: {
         unoptimized: true, // For simplest static export with images
     },
+    basePath: '/ecommerce-app',
+    // Set the asset prefix to match the GitHub Pages URL
+    assetPrefix: '/ecommerce-app',
 }
 
 module.exports = nextConfig
