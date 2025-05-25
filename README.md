@@ -1,5 +1,24 @@
 # BookStore Application
 
+## Table of Contents
+* [BookStore Application](#bookstore-application)
+  * [Table of Contents](#table-of-contents)
+  * [Project Overview](#project-overview)
+  * [Technologies Used](#technologies-used)
+  * [Project Limitations](#project-limitations)
+    * [Future Implementation Requirements](#future-implementation-requirements)
+  * [Project Structure](#project-structure)
+    * [Main Files](#main-files)
+  * [Database Implementation](#database-implementation)
+    * [Database Schema](#database-schema)
+    * [How to Run the Project Locally](#how-to-run-the-project-locally)
+    * [Database Migrations](#database-migrations)
+      * [Working with Migrations](#working-with-migrations)
+  * [Project Requirements](#project-requirements)
+    * [Runtime Environment](#runtime-environment)
+    * [Package Dependencies](#package-dependencies)
+    * [System Requirements](#system-requirements)
+
 ## Project Overview
 
 This project is a book e-commerce application built as a student assignment. It features a storefront where users can browse books and complete a checkout process.
